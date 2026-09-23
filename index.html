@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MR Leal Serviços Contábeis | Teresina e Sul do Piauí</title>
+<meta name="description" content="Contabilidade completa para MEI, Simples Nacional, Lucro Presumido e Lucro Real em Teresina e Sul do Piauí. Abertura de empresas, departamento pessoal, escrituração, auditoria, recuperação tributária e assessoria financeira.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#0a1f3a;
+    --navy-900:#0f2d52;
+    --navy-800:#163b68;
+    --navy-700:#1f4d84;
+    --blue-500:#2f6fb0;
+    --blue-100:#e7eff8;
+    --paper:#f6f4ef;
+    --paper-dim:#efece3;
+    --gold-500:#b78a34;
+    --gold-300:#d9b46a;
+    --ink:#132235;
+    --ink-soft:#4a5b70;
+    --line:#dcdfe4;
+    --white:#ffffff;
+    --ok-green:#3c7a5a;
+    --shadow: 0 20px 45px -25px rgba(10,31,58,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Public Sans', sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--navy-950);
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none;}
+  p{line-height:1.65;color:var(--ink-soft);margin:0;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-500);
+    font-weight:500;
+  }
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px;}
+  section{padding:96px 0;}
+  img{max-width:100%;display:block;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,31,58,0.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .nav{
+    max-width:1160px;margin:0 auto;padding:0 28px;
+    display:flex;align-items:center;justify-content:space-between;
+    height:76px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;color:var(--white);}
+  .brand-mark{
+    width:38px;height:38px;border-radius:9px;
+    background:linear-gradient(155deg,var(--gold-300),var(--gold-500));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:700;color:var(--navy-950);font-size:1.05rem;
+  }
+  .brand-name{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:600;line-height:1.1;}
+  .brand-name span{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;color:var(--gold-300);font-weight:500;margin-top:2px;}
+  nav.links{display:flex;gap:30px;align-items:center;}
+  nav.links a{
+    color:rgba(255,255,255,0.82);font-size:0.89rem;font-weight:600;
+    transition:color .2s ease;
+  }
+  nav.links a:hover{color:var(--gold-300);}
+  .nav-cta{
+    background:var(--gold-500);color:var(--navy-950)!important;
+    padding:10px 18px;border-radius:8px;font-weight:700!important;font-size:0.85rem!important;
+  }
+  .burger{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(1100px 500px at 85% -10%, rgba(215,180,106,0.18), transparent 60%),
+      linear-gradient(175deg, var(--navy-950) 0%, var(--navy-900) 55%, var(--navy-800) 100%);
+    color:var(--white);
+    padding:120px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-60px;width:520px;height:520px;
+    border:1px solid rgba(255,255,255,0.08);border-radius:50%;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:60px;align-items:center;position:relative;}
+  .hero h1{color:var(--white);font-size:2.7rem;line-height:1.12;margin-top:16px;max-width:620px;}
+  .hero h1 em{font-style:normal;color:var(--gold-300);}
+  .hero p.lead{color:rgba(255,255,255,0.78);font-size:1.08rem;max-width:540px;margin-top:20px;}
+  .hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 24px;border-radius:9px;font-weight:700;font-size:0.92rem;
+    border:1px solid transparent;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-gold{background:var(--gold-500);color:var(--navy-950);}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 24px -10px rgba(183,138,52,0.55);}
+  .btn-ghost{border-color:rgba(255,255,255,0.3);color:var(--white);}
+  .btn-ghost:hover{border-color:var(--gold-300);color:var(--gold-300);}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px;max-width:480px;}
+  .stat{border-top:1px solid rgba(255,255,255,0.18);padding-top:12px;}
+  .stat b{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--gold-300);display:block;}
+  .stat span{font-size:0.8rem;color:rgba(255,255,255,0.65);}
+
+  .hero-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:16px;padding:28px;backdrop-filter:blur(4px);
+  }
+  .hero-card .eyebrow{color:var(--gold-300);}
+  .hero-card h3{color:var(--white);font-size:1.2rem;margin-top:8px;}
+  .hero-card p{color:rgba(255,255,255,0.72);margin-top:10px;font-size:0.92rem;}
+  .rf-badge{
+    display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+    background:rgba(217,180,106,0.12);border:1px solid rgba(217,180,106,0.4);
+    padding:8px 12px;border-radius:8px;font-size:0.78rem;color:var(--gold-300);font-weight:600;
+  }
+  .rf-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold-300);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
+
+  /* ---------- MISSION STRIP ---------- */
+  .mission-strip{background:var(--navy-900);border-top:1px solid rgba(255,255,255,0.08);}
+  .mission-strip .wrap{
+    padding:26px 28px;display:flex;gap:40px;align-items:center;
+    color:rgba(255,255,255,0.85);font-family:'IBM Plex Mono',monospace;font-size:0.78rem;
+    flex-wrap:wrap;
+  }
+  .mission-strip strong{color:var(--gold-300);}
+
+  /* ---------- SOBRE ---------- */
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:2rem;margin-top:10px;}
+  .section-head p{margin-top:14px;font-size:1.03rem;}
+
+  .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start;}
+  .about-copy p + p{margin-top:16px;}
+  .values-list{display:grid;gap:16px;margin-top:8px;}
+  .value-card{
+    background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:20px 22px;box-shadow:var(--shadow);
+  }
+  .value-card .eyebrow{margin-bottom:6px;}
+  .value-card h4{font-size:1.05rem;}
+  .value-card p{margin-top:6px;font-size:0.92rem;}
+
+  /* ---------- SETORES / REGIMES ---------- */
+  .segments{background:var(--navy-950);color:var(--white);}
+  .segments .section-head h2{color:var(--white);}
+  .segments .section-head p{color:rgba(255,255,255,0.68);}
+  .regime-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+  .regime-pill{
+    border:1px solid rgba(217,180,106,0.4);color:var(--gold-300);
+    padding:10px 18px;border-radius:999px;font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;letter-spacing:0.04em;
+  }
+  .sector-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .sector-card{
+    background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);
+    border-radius:12px;padding:20px 18px;transition:border-color .2s ease, transform .2s ease;
+  }
+  .sector-card:hover{border-color:var(--gold-300);transform:translateY(-3px);}
+  .sector-card .num{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--gold-300);}
+  .sector-card h4{color:var(--white);font-size:1rem;margin-top:10px;}
+  .sector-card p{color:rgba(255,255,255,0.6);font-size:0.85rem;margin-top:6px;}
+
+  /* ---------- SERVICOS ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .service-card{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:26px;box-shadow:var(--shadow);
+  }
+  .service-card .idx{
+    font-family:'IBM Plex Mono',monospace;color:var(--gold-500);font-size:0.75rem;
+  }
+  .service-card h3{font-size:1.12rem;margin-top:10px;}
+  .service-card p{margin-top:8px;font-size:0.92rem;}
+
+  /* ---------- INFORMATIVOS / REFORMA ---------- */
+  .informativos{background:linear-gradient(180deg, var(--paper) 0%, var(--paper-dim) 100%);}
+  .rf-header{
+    display:flex;justify-content:space-between;align-items:flex-end;gap:30px;
+    flex-wrap:wrap;margin-bottom:12px;
+  }
+  .updated-chip{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--navy-950);color:var(--gold-300);
+    padding:8px 14px;border-radius:999px;font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;letter-spacing:0.04em;white-space:nowrap;
+  }
+  .updated-chip .dot{width:6px;height:6px;border-radius:50%;background:var(--gold-300);}
+
+  .rf-intro{
+    background:var(--white);border:1px solid var(--line);border-radius:16px;
+    padding:30px 32px;margin:34px 0 54px;box-shadow:var(--shadow);
+    display:grid;grid-template-columns:repeat(3,1fr);gap:26px;
+  }
+  .rf-intro .item h4{font-size:0.95rem;color:var(--navy-900);}
+  .rf-intro .item .big{font-family:'Fraunces',serif;font-size:1.9rem;color:var(--gold-500);display:block;margin-top:4px;}
+  .rf-intro .item p{font-size:0.85rem;margin-top:6px;}
+
+  /* timeline */
+  .timeline-title{margin-bottom:26px;}
+  .timeline{position:relative;margin-left:6px;padding-left:34px;border-left:2px solid var(--line);}
+  .t-item{position:relative;padding-bottom:34px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:"";position:absolute;left:-42px;top:2px;width:14px;height:14px;border-radius:50%;
+    background:var(--white);border:3px solid var(--gold-500);
+  }
+  .t-item.active::before{background:var(--gold-500);}
+  .t-year{font-family:'IBM Plex Mono',monospace;color:var(--navy-900);font-weight:600;font-size:0.85rem;letter-spacing:0.04em;}
+  .t-item h4{font-size:1.05rem;margin-top:6px;}
+  .t-item p{margin-top:6px;font-size:0.92rem;max-width:640px;}
+
+  .rf-sector-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px;
+  }
+  .rf-sector-card{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px;
+    box-shadow:var(--shadow);
+  }
+  .rf-sector-card .tag{
+    display:inline-block;background:var(--blue-100);color:var(--navy-800);
+    font-size:0.72rem;font-weight:700;padding:5px 10px;border-radius:6px;
+    font-family:'IBM Plex Mono',monospace;letter-spacing:0.03em;
+  }
+  .rf-sector-card h3{font-size:1.18rem;margin-top:12px;}
+  .rf-sector-card ul{margin:14px 0 0;padding-left:18px;}
+  .rf-sector-card li{color:var(--ink-soft);font-size:0.92rem;margin-bottom:8px;line-height:1.55;}
+  .rf-sector-card li::marker{color:var(--gold-500);}
+
+  /* accordion */
+  .faq{margin-top:56px;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    display:flex;justify-content:space-between;align-items:center;gap:20px;
+    padding:20px 4px;cursor:pointer;background:none;border:none;width:100%;text-align:left;
+    font-family:'Fraunces',serif;font-size:1.05rem;color:var(--navy-950);font-weight:600;
+  }
+  .faq-q .plus{font-family:'IBM Plex Mono',monospace;color:var(--gold-500);font-size:1.2rem;transition:transform .2s ease;flex-shrink:0;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease;}
+  .faq-a p{padding:0 4px 22px;font-size:0.94rem;max-width:760px;}
+
+  .rf-cta{
+    margin-top:58px;background:var(--navy-950);border-radius:18px;padding:40px 44px;
+    display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;
+    color:var(--white);
+  }
+  .rf-cta h3{color:var(--white);font-size:1.35rem;max-width:480px;}
+  .rf-cta p{color:rgba(255,255,255,0.68);margin-top:8px;max-width:480px;}
+
+  /* ---------- CONTATO ---------- */
+  .contact{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .contact-list{display:grid;gap:20px;margin-top:26px;}
+  .contact-row{display:flex;gap:14px;align-items:flex-start;}
+  .contact-row .ic{
+    width:38px;height:38px;border-radius:9px;background:var(--blue-100);color:var(--navy-800);
+    display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;
+  }
+  .contact-row b{display:block;color:var(--navy-950);font-size:0.95rem;}
+  .contact-row span{color:var(--ink-soft);font-size:0.9rem;}
+  .form-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:30px;
+  }
+  .form-card label{font-size:0.8rem;font-weight:700;color:var(--navy-900);display:block;margin-bottom:6px;}
+  .form-card input,.form-card select,.form-card textarea{
+    width:100%;padding:11px 13px;border-radius:8px;border:1px solid var(--line);
+    font-family:'Public Sans',sans-serif;font-size:0.92rem;margin-bottom:16px;background:var(--white);
+  }
+  .form-card textarea{resize:vertical;min-height:90px;}
+  .form-card button{width:100%;}
+
+  footer{background:var(--navy-950);color:rgba(255,255,255,0.6);padding:40px 0;}
+  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:0.82rem;}
+  .footer-row .social{display:flex;gap:14px;}
+  .footer-row .social a{color:rgba(255,255,255,0.6);}
+  .footer-row .social a:hover{color:var(--gold-300);}
+
+  @media (max-width:920px){
+    nav.links{display:none;}
+    .burger{display:block;}
+    .hero-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .sector-grid{grid-template-columns:repeat(2,1fr);}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .rf-intro{grid-template-columns:1fr;}
+    .rf-sector-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2.1rem;}
+  }
+  @media (max-width:560px){
+    section{padding:64px 0;}
+    .services-grid{grid-template-columns:1fr;}
+    .sector-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#topo">
+      <span class="brand-mark">ML</span>
+      <span class="brand-name">MR Leal<span>SERVIÇOS CONTÁBEIS</span></span>
+    </a>
+    <nav class="links">
+      <a href="#sobre">Sobre nós</a>
+      <a href="#setores">Clientes &amp; setores</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#reforma">Reforma Tributária</a>
+      <a href="#contato" class="nav-cta">Fale conosco</a>
+    </nav>
+    <button class="burger" aria-label="menu">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="topo">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Teresina &amp; Sul do Piauí · desde 2012</span>
+      <h1>Contabilidade que decifra a reforma tributária <em>para quem precisa vender, faturar e crescer.</em></h1>
+      <p class="lead">Cuidamos da contabilidade de empresas de todos os portes e regimes — do MEI ao Lucro Real — com atenção especial a clínicas, laboratórios, distribuidoras, postos de combustíveis e comércio varejista.</p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn btn-gold">Fale com um especialista</a>
+        <a href="#reforma" class="btn btn-ghost">Ver informativo da Reforma Tributária</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>+13 anos</b><span>de atuação contábil em Teresina e Sul do Piauí</span></div>
+        <div class="stat"><b>4 regimes</b><span>MEI, Simples Nacional, Presumido e Real</span></div>
+        <div class="stat"><b>8 áreas</b><span>de serviços contábeis, fiscais e financeiros</span></div>
+        <div class="stat"><b>Multissetorial</b><span>varejo, saúde, combustíveis, indústria e serviços</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <span class="eyebrow">Painel · Reforma Tributária</span>
+      <h3>2026 é o ano-teste do IBS e da CBS</h3>
+      <p>Desde 3 de agosto, empresas do Lucro Presumido e Real já não podem emitir notas sem os campos de IBS/CBS preenchidos — e o Simples Nacional está com a janela de setembro aberta para decidir como recolher os novos tributos em 2027.</p>
+      <div class="rf-badge"><span class="dot"></span> Atualizado em setembro de 2026</div>
+    </div>
+  </div>
+</section>
+
+<div class="mission-strip">
+  <div class="wrap">
+    <span><strong>Missão</strong> — informação contábil precisa para decisões melhores</span>
+    <span><strong>Visão</strong> — referência em contabilidade no Piauí</span>
+    <span><strong>Valores</strong> — ética, cortesia e responsabilidade social</span>
+  </div>
+</div>
+
+<section id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <span class="eyebrow">Sobre nós</span>
+      <h2 style="margin-top:10px;">Um escritório construído por quem já esteve do outro lado do balcão</h2>
+      <p style="margin-top:18px;">Depois de mais de uma década como profissional liberal atendendo empresas dos mais diversos ramos, fundamos, em 2012, o escritório MR Leal Serviços Contábeis. Desde então, prestamos um serviço de excelência em Teresina e no Sul do Estado do Piauí, com uma equipe que reúne habilidade técnica, atualização constante e proximidade com o cliente.</p>
+      <p>Atuamos na Contabilidade Privada em suas diversas ramificações — comércio varejista, prestação de serviços e indústria — sempre com o objetivo de colaborar com soluções ideais para a gestão de cada negócio, seja ele um consultório médico, uma distribuidora ou um posto de combustíveis.</p>
+    </div>
+    <div class="values-list">
+      <div class="value-card">
+        <span class="eyebrow">Missão</span>
+        <h4>Informação com credibilidade</h4>
+        <p>Prestar informações precisas e confiáveis aos nossos clientes e aos usuários da contabilidade em geral, para que tomem as melhores decisões na gestão de seus negócios.</p>
+      </div>
+      <div class="value-card">
+        <span class="eyebrow">Visão</span>
+        <h4>Referência contábil regional</h4>
+        <p>Ser referência em contabilidade e serviços correlatos em Teresina e no Sul do Piauí.</p>
+      </div>
+      <div class="value-card">
+        <span class="eyebrow">Valores</span>
+        <h4>Ética e proximidade</h4>
+        <p>Ética, atenção aos clientes, responsabilidade social, valorização dos colaboradores, cortesia e respeito guiam cada atendimento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="segments" id="setores">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Clientes &amp; setores</span>
+      <h2>Contabilidade sob medida para cada regime e cada operação</h2>
+      <p>Atendemos empresas em todos os regimes tributários e damos suporte especializado a setores com regras próprias — essencial num momento em que a reforma tributária muda a forma como cada um deles é tributado.</p>
+    </div>
+    <div class="regime-row">
+      <span class="regime-pill">MEI</span>
+      <span class="regime-pill">Simples Nacional</span>
+      <span class="regime-pill">Lucro Presumido</span>
+      <span class="regime-pill">Lucro Real</span>
+    </div>
+    <div class="sector-grid">
+      <div class="sector-card"><span class="num">01</span><h4>Clínicas &amp; consultórios médicos</h4><p>Enquadramento tributário, equiparação hospitalar e regras da reforma para saúde.</p></div>
+      <div class="sector-card"><span class="num">02</span><h4>Laboratórios</h4><p>Escrituração fiscal e apuração de créditos em serviços de diagnóstico.</p></div>
+      <div class="sector-card"><span class="num">03</span><h4>Postos de gasolina</h4><p>Regime monofásico, Imposto Seletivo e adequação de sistemas fiscais.</p></div>
+      <div class="sector-card"><span class="num">04</span><h4>Distribuidoras</h4><p>Créditos tributários, logística fiscal e recuperação de tributos pagos a maior.</p></div>
+      <div class="sector-card"><span class="num">05</span><h4>Comércio varejista</h4><p>Departamento fiscal completo e planejamento tributário por regime.</p></div>
+      <div class="sector-card"><span class="num">06</span><h4>Indústria</h4><p>Escrituração contábil e societária para operações mais complexas.</p></div>
+      <div class="sector-card"><span class="num">07</span><h4>Profissionais liberais</h4><p>Advogados, engenheiros, arquitetos e autônomos que passam a precisar de CNPJ para CBS/IBS.</p></div>
+      <div class="sector-card"><span class="num">08</span><h4>Prestadores de serviço</h4><p>Assessoria financeira e fiscal para negócios de serviço de todos os portes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Nossos serviços</span>
+      <h2>Contabilidade do início ao fim da jornada da sua empresa</h2>
+      <p>Da abertura da empresa à recuperação de tributos pagos indevidamente, oferecemos um serviço sólido e eficiente em cada etapa.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="idx">01</span><h3>Abertura de empresas</h3><p>Viabilidade, registro, enquadramento tributário e todas as licenças necessárias para começar com segurança.</p></div>
+      <div class="service-card"><span class="idx">02</span><h3>Departamento pessoal</h3><p>Folha de pagamento, admissões, demissões, eSocial e obrigações trabalhistas em dia.</p></div>
+      <div class="service-card"><span class="idx">03</span><h3>Escrituração contábil</h3><p>Contabilidade completa, balanços e demonstrativos que retratam a real situação do negócio.</p></div>
+      <div class="service-card"><span class="idx">04</span><h3>Departamento fiscal</h3><p>Apuração e entrega de obrigações acessórias, inclusive os novos campos de IBS e CBS.</p></div>
+      <div class="service-card"><span class="idx">05</span><h3>Auditoria</h3><p>Revisão de processos e demonstrações contábeis para mais segurança e conformidade.</p></div>
+      <div class="service-card"><span class="idx">06</span><h3>Recuperação tributária</h3><p>Identificação e recuperação de créditos e tributos pagos a maior, com foco no período de transição.</p></div>
+      <div class="service-card"><span class="idx">07</span><h3>Assessoria financeira</h3><p>Organização de fluxo de caixa, indicadores e apoio à tomada de decisão.</p></div>
+      <div class="service-card"><span class="idx">08</span><h3>Planejamento tributário</h3><p>Escolha e revisão do regime mais vantajoso diante das mudanças da reforma.</p></div>
+      <div class="service-card"><span class="idx">09</span><h3>Planejamento societário</h3><p>Estruturação societária adequada às exigências fiscais atuais e futuras.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="informativos" id="reforma">
+  <div class="wrap">
+    <div class="rf-header">
+      <div class="section-head" style="margin-bottom:0;">
+        <span class="eyebrow">Informativos</span>
+        <h2>Reforma Tributária: o guia completo e atualizado</h2>
+        <p>Acompanhamos de perto a implementação do IBS, da CBS e do Imposto Seletivo para manter cada cliente — de qualquer regime e setor — preparado para cada etapa da transição.</p>
+      </div>
+      <span class="updated-chip"><span class="dot"></span>Atualizado em setembro de 2026</span>
+    </div>
+
+    <div class="rf-intro">
+      <div class="item">
+        <h4>Novo sistema</h4>
+        <span class="big">IBS + CBS</span>
+        <p>Substituem gradualmente PIS, Cofins, IPI, ICMS e ISS, formando um IVA dual com alíquota padrão plena estimada em cerca de 26,5% (8,8% de CBS + 17,7% de IBS) — número ainda sujeito a ajuste.</p>
+      </div>
+      <div class="item">
+        <h4>Fase atual</h4>
+        <span class="big">Ano-teste</span>
+        <p>Em 2026, IBS e CBS aparecem nas notas fiscais só para fins informativos, sem cobrança efetiva, conforme a Lei Complementar 214/2025.</p>
+      </div>
+      <div class="item">
+        <h4>Transição completa</h4>
+        <span class="big">2027–2033</span>
+        <p>CBS entra em vigor plena em 2027; ICMS e ISS são substituídos gradualmente pelo IBS até a extinção total em 2033.</p>
+      </div>
+    </div>
+
+    <h3 class="timeline-title">Linha do tempo: o que muda e quando</h3>
+    <div class="timeline">
+      <div class="t-item active">
+        <span class="t-year">Jan 2026</span>
+        <h4>Início da fase de testes</h4>
+        <p>Notas fiscais eletrônicas passam a destacar CBS (0,9%) e IBS (0,1%) de forma simbólica. Os tributos antigos continuam valendo sem alteração de alíquota, e o valor de teste é compensado com o que já se paga de PIS/Cofins.</p>
+      </div>
+      <div class="t-item active">
+        <span class="t-year">Jul 2026</span>
+        <h4>CNPJ obrigatório para pessoas físicas contribuintes</h4>
+        <p>Desde julho, pessoas físicas contribuintes de CBS e IBS — caso de produtores rurais, transportadores autônomos e alguns profissionais liberais — precisam se inscrever no CNPJ para facilitar a apuração dos novos tributos.</p>
+      </div>
+      <div class="t-item active">
+        <span class="t-year">3 Ago 2026</span>
+        <h4>Campos de IBS/CBS obrigatórios no Regime Normal</h4>
+        <p>Desde 3 de agosto, conforme o Ato Conjunto RFB/CGIBS nº 4, empresas de Lucro Presumido e Lucro Real não podem mais emitir documentos fiscais eletrônicos sem os campos da alíquota-teste de 1% (0,9% CBS + 0,1% IBS). A rejeição automática de notas com campos ausentes segue adiada indefinidamente, mas o preenchimento correto continua obrigatório.</p>
+      </div>
+      <div class="t-item active">
+        <span class="t-year">Set 2026</span>
+        <h4>Janela de decisão do Simples Nacional</h4>
+        <p>De 1º a 30 de setembro, conforme a Resolução CGSN nº 186/2026, empresas do Simples Nacional escolhem como o IBS e a CBS serão recolhidos no 1º semestre de 2027 — dentro da guia única (DAS) ou pelo regime regular. O Simples Nacional em si não é extinto nem abandonado nessa decisão: o que muda é só a forma de recolher esses dois tributos. Uma segunda janela, de 1º a 31 de março de 2027, definirá o modelo para o 2º semestre.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-year">2027</span>
+        <h4>CBS em vigor plena</h4>
+        <p>PIS e Cofins são extintos. A CBS passa a ser cobrada com alíquota cheia (estimada em 8,8%) e o IPI é zerado para a maioria dos produtos, exceto os da Zona Franca de Manaus. O split payment em operações B2B começa de forma facultativa no 2º semestre, segundo cronograma atualizado em setembro de 2026.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-year">2029–2032</span>
+        <h4>Transição estadual e municipal</h4>
+        <p>ICMS e ISS são reduzidos progressivamente enquanto o IBS aumenta gradualmente, até a inversão completa entre os dois sistemas.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-year">2033</span>
+        <h4>Sistema definitivo</h4>
+        <p>Extinção total do ICMS e do ISS. IBS e CBS passam a operar com 100% da alíquota plena, encerrando a transição.</p>
+      </div>
+    </div>
+
+    <div class="rf-sector-grid">
+      <div class="rf-sector-card">
+        <span class="tag">SAÚDE · CLÍNICAS, LABORATÓRIOS E MÉDICOS</span>
+        <h3>Redução de 60% na alíquota</h3>
+        <ul>
+          <li>Serviços hospitalares, médicos, ambulatoriais e laboratoriais têm redução de 60% sobre a alíquota padrão do IBS/CBS, prevista nos arts. 128 e 130 da LC 214/2025 — o que pode levar a carga efetiva a cerca de 10% a 11%.</li>
+          <li>A equiparação hospitalar continua sendo uma estratégia relevante no Lucro Presumido, reduzindo a base de cálculo do IRPJ e da CSLL para clínicas que atendem aos requisitos legais.</li>
+          <li>Clínicas estéticas e serviços híbridos ainda geram dúvida sobre o enquadramento no benefício — por isso a classificação correta dos serviços (código NBS) é essencial para não perder o desconto.</li>
+          <li>Consultórios e clínicas passam a poder aproveitar créditos de IBS/CBS sobre insumos; já profissionais autônomos sem CNPJ tendem a não se beneficiar dos créditos.</li>
+        </ul>
+      </div>
+      <div class="rf-sector-card">
+        <span class="tag">COMBUSTÍVEIS · POSTOS E DISTRIBUIDORAS</span>
+        <h3>Regime monofásico e Imposto Seletivo</h3>
+        <ul>
+          <li>Combustíveis seguem no regime monofásico de IBS/CBS: o tributo é recolhido uma única vez, concentrado nas refinarias, importadoras e distribuidoras — o que muda a lógica de crédito para quem revende.</li>
+          <li>O Imposto Seletivo ("imposto do pecado") incide sobre a extração e produção de combustíveis fósseis, com alíquotas sugeridas entre 0,25% e 1%, podendo pressionar o preço na bomba mesmo sem incidir diretamente no consumo.</li>
+          <li>Enquanto não há alíquota específica definida, os postos devem informar apenas os códigos CST 620 e cClassTrib 620006 nas notas fiscais, sem preenchimento de valores.</li>
+          <li>O novo modelo tende a reduzir a sonegação praticada por distribuidoras de menor porte, reforçando a importância de negociar apenas com fornecedores idôneos.</li>
+        </ul>
+      </div>
+      <div class="rf-sector-card">
+        <span class="tag">MEI E SIMPLES NACIONAL</span>
+        <h3>Regime mantido — decisão é sobre a forma de recolher, não sobre sair do Simples</h3>
+        <ul>
+          <li>O Simples Nacional continua garantido pelo art. 179 da Constituição, com o DAS unificado preservado; a reforma muda apenas a composição interna dessa guia.</li>
+          <li>De 1º a 30 de setembro de 2026, cada empresa optante decide como o IBS e a CBS serão recolhidos no 1º semestre de 2027: dentro do próprio DAS (regime unificado) ou pelo regime regular — sem que isso signifique deixar o Simples Nacional.</li>
+          <li>Manter a opção pelo Simples em 2027 também depende de estar com a situação fiscal e cadastral regularizada até o fim de 2026.</li>
+          <li>Essa escolha exige simulação caso a caso: depende do perfil de clientes, da cadeia de fornecedores e da estrutura de custos de cada negócio — por isso recomendamos revisar com antecedência à janela de setembro.</li>
+        </ul>
+      </div>
+      <div class="rf-sector-card">
+        <span class="tag">VAREJO, DISTRIBUIÇÃO E INDÚSTRIA</span>
+        <h3>Créditos amplos e recuperação de tributos</h3>
+        <ul>
+          <li>O modelo de débito e crédito do IVA dual permite crédito amplo, inclusive sobre bens de uso e consumo — uma mudança relevante para quem hoje perde crédito nesses itens.</li>
+          <li>A cesta básica nacional terá alíquota zero para itens essenciais, com redução de 60% para outros alimentos, impactando diretamente supermercados e distribuidoras do setor alimentício.</li>
+          <li>Empresas do regime não cumulativo devem revisar teses de recuperação de créditos (como monofásicos e a chamada "tese do século") antes da extinção definitiva do PIS/Cofins.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq">
+      <h3 style="margin-bottom:8px;">Perguntas frequentes sobre a transição</h3>
+      <div class="faq-item open">
+        <button class="faq-q">A reforma já aumenta o que eu pago de imposto em 2026?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Não. O artigo 348 da Lei Complementar 214/2025 dispensa o recolhimento de IBS e CBS sobre os fatos geradores de 2026, desde que a empresa cumpra corretamente as obrigações acessórias. O ano tem caráter informativo: serve para testar sistemas e processos, não para arrecadar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Minha nota vai ser rejeitada se eu errar os novos campos de IBS/CBS?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Não. A rejeição automática de notas com os campos incorretos ou ausentes segue adiada por prazo indeterminado, e a Receita Federal trata 2026 como ano de orientação, não de punição. Ainda assim, o preenchimento correto continua obrigatório: inconsistências geram notificação com até 60 dias para regularização antes de qualquer multa — por isso vale manter o acompanhamento contábil em dia.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Profissional liberal sem empresa precisa abrir CNPJ?<span class="plus">+</span></button>
+        <div class="faq-a"><p>A partir de julho de 2026, pessoas físicas contribuintes de CBS e IBS — caso de produtores rurais, transportadores autônomos e alguns profissionais liberais — precisam se inscrever no CNPJ. Isso não transforma a pessoa física em jurídica: o CNPJ serve apenas para facilitar a apuração dos novos tributos.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Qual regime tende a compensar mais para clínicas e consultórios?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Depende do faturamento, da estrutura societária e do tipo de procedimento realizado. A redução de 60% do IBS/CBS para saúde muda o comparativo entre Simples Nacional, Lucro Presumido e Lucro Real — por isso recomendamos simular os cenários antes de decidir, especialmente diante da janela de opção do Simples Nacional, aberta de 1º a 30 de setembro de 2026.</p></div>
+      </div>
+    </div>
+
+    <div class="rf-cta">
+      <div>
+        <h3>Quer entender o impacto da reforma no seu negócio específico?</h3>
+        <p>Fazemos uma leitura personalizada do seu regime, setor e faturamento para planejar cada etapa da transição até 2033.</p>
+      </div>
+      <a href="#contato" class="btn btn-gold">Agendar uma conversa</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Contato</span>
+      <h2 style="margin-top:10px;">Vamos conversar sobre a contabilidade do seu negócio</h2>
+      <p style="margin-top:14px;">Atendemos empresas em Teresina e em todo o Sul do Estado do Piauí. Fale com a nossa equipe e receba uma orientação sob medida para o seu regime e setor.</p>
+      <div class="contact-list">
+        <div class="contact-row"><span class="ic">☎</span><div><b>Telefone</b><span>(86) 3223-6176</span></div></div>
+        <div class="contact-row"><span class="ic">✉</span><div><b>E-mail</b><span>contato@mrlealcontabilidade.com.br</span></div></div>
+        <div class="contact-row"><span class="ic">📍</span><div><b>Atendimento</b><span>Teresina e Sul do Estado do Piauí</span></div></div>
+      </div>
+    </div>
+    <div class="form-card">
+      <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Mensagem enviada ✓';">
+        <label>Nome</label>
+        <input type="text" placeholder="Seu nome completo" required>
+        <label>E-mail</label>
+        <input type="email" placeholder="voce@empresa.com.br" required>
+        <label>Regime / setor</label>
+        <select>
+          <option>MEI</option>
+          <option>Simples Nacional</option>
+          <option>Lucro Presumido</option>
+          <option>Lucro Real</option>
+          <option>Ainda não sei</option>
+        </select>
+        <label>Mensagem</label>
+        <textarea placeholder="Conte um pouco sobre a sua empresa e sua necessidade"></textarea>
+        <button type="submit" class="btn btn-gold">Enviar mensagem</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 MR Leal Serviços Contábeis · Teresina e Sul do Piauí, PI</span>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/mrlealservcontabil/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/mrlealcontabilidade/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/Marcelo-Leal-102068071440912/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    if(item.classList.contains('open')){ a.style.maxHeight = a.scrollHeight + 'px'; }
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = 0;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

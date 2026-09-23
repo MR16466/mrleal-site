@@ -1,0 +1,30 @@
+name: Verificar dados de contato publicados
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conferir se o site publicado ainda tem telefone e e-mail esperados
+        run: |
+          EXPECTED_PHONE="(86) 3223-6176"
+          EXPECTED_EMAIL="contato@mrlealcontabilidade.com.br"
+          URL="https://stelioskarvanis-cloud.github.io/mrleal-site/"
+          content=$(curl -fsSL "$URL")
+          fail=0
+          if ! echo "$content" | grep -qF "$EXPECTED_PHONE"; then
+            echo "::error::Telefone esperado ($EXPECTED_PHONE) NAO foi encontrado em $URL. O site pode ter sido alterado sem autorizacao."
+            fail=1
+          fi
+          if ! echo "$content" | grep -qF "$EXPECTED_EMAIL"; then
+            echo "::error::E-mail esperado ($EXPECTED_EMAIL) NAO foi encontrado em $URL. O site pode ter sido alterado sem autorizacao."
+            fail=1
+          fi
+          if [ "$fail" -eq 1 ]; then
+            exit 1
+          fi
+          echo "OK: telefone e e-mail conferem em $URL"
